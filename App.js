@@ -17,6 +17,8 @@ import {
   Dimensions
 } from 'react-native';
 
+import TimePicker from './timePicker'
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -104,8 +106,7 @@ export default class App extends Component{
         inputRange : [0,1],
         outputRange : [0,Dimensions.get('window').width/2]
     });
-    
-   
+      
 
 
     console.log(PixelRatio.getPixelSizeForLayoutSize(300));
@@ -116,7 +117,7 @@ export default class App extends Component{
           {/* <WebViewExample/> */}
  
            {/* <View style = {{width : 50, height : 50 , backgroundColor : 'blue'}}></View>    */}
-
+           <TimePicker/>  
           <Animated.View style = {[{marginTop : 20, width : 50, height : 50 , backgroundColor : 'blue'},{marginLeft}]}/>  
          
           <Button easing = {'easeInElastic'} onPress = {this.animated.bind(this,Easing.elastic(3))}/>
